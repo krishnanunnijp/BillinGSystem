@@ -27,6 +27,13 @@ public class Main {
                     while (choice1 != 0) {
                         price.listItems();
                         choice1 = sc.nextInt();
+                        if(choice1!=0){
+                            System.out.println("enter the quantity:");
+                            int quantity= sc.nextInt();
+                            bill.setQuantity(quantity);
+                        }else {
+                            choice1=0;
+                        }
                         bill.addItems(choice1);
                     }
                     bills1.add(bill);

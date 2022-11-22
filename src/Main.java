@@ -15,8 +15,14 @@ public class Main {
             choice= sc.nextInt();
             switch (choice) {
                 case 1:
+                    System.out.println("enter customer name:");
+                    String customerName=sc.next();
+                    System.out.println("enter the customer phone number:");
+                    long customerPhone = sc.nextLong();
                     generateBills bill = null;
                     bill = new generateBills();
+                    bill.setCustomerName(customerName);
+                    bill.setPhoneNumber(customerPhone);
                     choice1=1;
                     while (choice1 != 0) {
                         price.listItems();
@@ -40,6 +46,7 @@ public class Main {
 
 
     public static void viewEmployees(generateBills bill) {
+        System.out.println("customer:"+bill.getCustomerName()+ "   phone:"+bill.getPhoneNumber());
         System.out.println(bill.bills);
     }
     private static void viewAllBills(ArrayList<generateBills> bills1) {
